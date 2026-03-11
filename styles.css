@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+main {
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+}
+.header-content {
+    background-color: black;
+}
+.content {
+    background-color: #fff;
+}
+.event {
+    align-self: center;
+    margin-top: 150px;
+}
+.logo img{
+    border: 3px solid blue;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    transition: all 0.8s ease;
+    margin-left: 190px;
+}
+.logo img:hover {
+    box-shadow: 2px 2px 50px 2px rgb(255, 0, 187);
+}
+@font-face {
+    font-family: 'cyberpunkfont';
+    src: url(/fonts/Cyberpunk-Regular.ttf);
+}
+h1 {
+    font-family: 'cyberpunkfont', sans-serif;
+    font-size: 3.5rem;
+    color: violet;
+}
+.neon-flicker-pink {
+    color: #fff;
+    animation: flicker-pink 1.5s infinite alternate;
+}
+
+@keyframes flicker-pink {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 
+            0 0 5px #f0f,
+            0 0 10px #f0f,
+            0 0 20px #f0f,
+            0 0 40px #f0f,
+            0 0 80px #f0f;
+    }
+    20%, 24%, 55% {
+        text-shadow: 
+            0 0 2px #f0f,
+            0 0 5px #f0f;
+    }
+}
+span {
+    margin-top: 100px;
+    text-align: center;
+    flex-basis: content;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 32px;
+}
+.jonhy {
+    position: absolute;
+    right: 0;
+}

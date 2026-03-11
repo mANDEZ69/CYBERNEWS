@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <div class="event">
+            <h1 class="neon-flicker-pink">CYBERNEWS</h1>
+            <div class="logo">
+                <img src="images/logo.png" alt="logo">
+            </div>
+        </div>
+            <!-- <div class="jonhy">
+                <img src="/images/silverhand.png" alt="silverhand">
+            </div>     -->
+        <span>Добро пожаловть на сайт</span>
+    </main>
+</body>
+</html>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Анимация для текста
+        const text = document.querySelector('.event');
+        if (text) {
+            text.style.opacity = '0';
+            text.style.transition = 'opacity 4s ease-in-out';
+            
+            setTimeout(() => {
+                text.style.opacity = '1';
+            }, 100);
+        }
+        
+        // Смена фона для main
+        const mainElement = document.querySelector('body');
+        if (mainElement) {
+            // Начальный черный фон
+            mainElement.style.backgroundColor = '#000000';
+            mainElement.style.transition = 'opacity 1.5s ease-in-out';
+            
+            // Создаем отдельный div для фона с гифкой
+            const backgroundDiv = document.createElement('div');
+            backgroundDiv.style.position = 'fixed';
+            backgroundDiv.style.top = '0';
+            backgroundDiv.style.left = '0';
+            backgroundDiv.style.width = '100%';
+            backgroundDiv.style.height = '100%';
+            backgroundDiv.style.backgroundImage = 'url(/images/giphy.gif)';
+            backgroundDiv.style.backgroundSize = 'cover';
+            backgroundDiv.style.backgroundPosition = 'center';
+            backgroundDiv.style.backgroundRepeat = 'no-repeat';
+            backgroundDiv.style.opacity = '0.1';
+            backgroundDiv.style.transition = 'opacity 4s ease-in-out';
+            backgroundDiv.style.zIndex = '-1';
+            
+            document.body.appendChild(backgroundDiv);
+        
+            // Плавно появляется гифка
+            setTimeout(() => {
+                backgroundDiv.style.opacity = '1';
+            }, 1000);
+        }
+
+       
+        const perenos = document.querySelector('h1');
+        if (perenos) {
+            perenos.style.alignSelf = 'center';
+            perenos.style.transition = 'transform 2s ease-in-out'
+            perenos.style.transform = 'translate(0,0) scale(1)';
+
+            setTimeout(() => {
+                perenos.style.transform = 'translate(-509.5px,-122px) scale(0.3)';
+            },1000);
+        }
+        const img = document.querySelector('.logo');
+        if (img) {
+            img.style.transition = 'transform 2s ease-in-out';
+            img.style.transform = 'translate (0,0) scale(1)';
+
+            setTimeout(()=> {
+                img.style.transform = 'translate(325.5px,66px) scale(0.5)';
+            },1000)
+        }
+    });
+</script>
